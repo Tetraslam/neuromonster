@@ -1,0 +1,60 @@
+[project]
+name = "neuromonster"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "attrs>=25.2.0",
+    "black>=25.1.0",
+    "dearpygui>=2.0.0",
+    "isort>=6.0.1",
+    "networkx>=3.4.2",
+    "numpy>=2.2.3",
+    "opencv-python>=4.11.0.86",
+    "ruff>=0.9.10",
+    "scipy>=1.15.2",
+    "tqdm>=4.67.1",
+]
+
+[project.optional-dependencies]
+cpu = [
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+    "torchaudio>=2.6.0",
+]
+cu126 = [
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+    "torchaudio>=2.6.0",
+]
+
+[tool.uv]
+conflicts = [
+    [
+        { extra = "cpu" },
+        { extra = "cu126" },
+    ],
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cu126", extra = "cu126" },
+]
+torchvision = [
+    { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cu126", extra = "cu126" },
+]
+torchaudio = [
+    { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cu126", extra = "cu126" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true

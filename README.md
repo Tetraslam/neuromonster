@@ -12,18 +12,41 @@ A PyTorch-inspired toolkit for neuronal computing with a focus on:
 
 ## Install
 
+### Prerequisites
+- Python 3.11 or higher
+- For GPU acceleration: CUDA 12.6 (download from https://developer.nvidia.com/cuda-12-6-3-download-archive)
+
+### Installation Steps
+
+1. Create and activate a virtual environment:
 ```bash
 uv venv
-uv pip install -e .
+# On Windows:
+.venv\Scripts\activate
+# On macOS/Linux:
+source .venv/bin/activate
 ```
+
+2. Install dependencies with PyTorch:
+
+For CPU-only version:
+```bash
+uv pip install -r pyproject.toml --extra cpu
+```
+
+For CUDA 12.6 version (requires NVIDIA GPU with CUDA 12.6 installed):
+```bash
+uv pip install -r pyproject.toml --extra cu126
+```
+
+That's it! The correct version of PyTorch will be installed automatically based on your choice.
 
 ## Tech Stack
 
 - **Python**: Core library and simulation engine
-- **JAX**: For hardware acceleration (way faster than raw PyTorch for our use case)
+- **PyTorch**: For hardware acceleration
 - **NumPy**: Numerical operations
-- **DearPyGui**: Desktop UI for neuron painting interface
-- **Plotly/Dash**: Interactive visualizations 
+- **DearPyGui**: Desktop UI for neuron painting interface and visualizations
 
 ## Core Components
 
