@@ -478,7 +478,7 @@ with dpg.window(label="Paint MEA!", width=1000, height=1000, tag="primary_window
     # Create a horizontal group to contain both panels
     with dpg.group(horizontal=True):
         # Left Panel (Cellular Automata)
-        with dpg.child_window(width=500, height=800):
+        with dpg.child_window(width=500, height=1000):
             with dpg.group(horizontal=True):
                 dpg.add_text("Neural cellular automata")
                 
@@ -502,7 +502,7 @@ with dpg.window(label="Paint MEA!", width=1000, height=1000, tag="primary_window
                     dpg.add_text("system, capturing dependencies between cells.", wrap=400)
 
         # Right Panel (Controls and Network Diagram)
-        with dpg.child_window(width=450, height=750):
+        with dpg.child_window(width=450, height=1000):
             # Controls section
             with dpg.group(horizontal=True):
                 # Left side - Interaction Mode
@@ -559,8 +559,8 @@ with dpg.window(label="Paint MEA!", width=1000, height=1000, tag="primary_window
             dpg.add_spacer(height=10)
             
             # Network diagram
-            dpg.add_text("Network Diagram", color=[255, 255, 100, 255], wrap=430)
-            with dpg.drawlist(width=400, height=300, tag="network_drawlist"):
+            dpg.add_text("Network Diagram", color=[255, 255, 100, 255], wrap=400)
+            with dpg.drawlist(width=400, height=400, tag="network_drawlist"):
                 # Will be populated by update_network_diagram
                 pass
 
