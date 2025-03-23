@@ -5,6 +5,7 @@ requires-python = ">=3.11"
 dependencies = [
     "attrs>=25.2.0",
     "black>=25.1.0",
+    "dataclasses>=0.8",
     "dearpygui>=2.0.0",
     "isort>=6.0.1",
     "networkx>=3.4.2",
